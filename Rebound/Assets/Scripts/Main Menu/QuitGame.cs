@@ -11,7 +11,7 @@ public class QuitGame : MonoBehaviour
     void Start()
     {
         // looks out for click
-        quitButton.onClick.AddListener(ExitGame);
+        //quitButton.onClick.AddListener(ExitGame);
     }
 
     public void ExitGame()
@@ -19,7 +19,7 @@ public class QuitGame : MonoBehaviour
         Debug.Log("Quitting game now >:(");
 
 // if in the unity editor
-        EditorApplication.isPlaying = false;
+        //EditorApplication.isPlaying = false;
 // if in build
         Application.Quit();
 
