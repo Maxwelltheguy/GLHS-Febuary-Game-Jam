@@ -59,6 +59,7 @@ public class FirstPersonController : NetworkBehaviour
     public bool playerCanMove = true;
     public float walkSpeed = 5f;
     public float maxVelocityChange = 10f;
+    public bool canDoubleJump = false;
 
     // Internal Variables
     private bool isWalking = false;
@@ -331,6 +332,11 @@ public class FirstPersonController : NetworkBehaviour
         {
             Jump();
         }
+        else if(enableJump && Input.GetKeyDown(jumpKey) && canDoubleJump)
+        {
+            Jump();
+            canDoubleJump = false;
+        }
 
         #endregion
 
@@ -338,17 +344,17 @@ public class FirstPersonController : NetworkBehaviour
 
         if (enableCrouch)
         {
-            if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
+            if (Input.GetKeyDown(crouchKey) && !holdToCrouch)
             {
                 Crouch();
             }
-            
-            if(Input.GetKeyDown(crouchKey) && holdToCrouch)
+
+            if (Input.GetKeyDown(crouchKey) && holdToCrouch)
             {
                 isCrouched = false;
                 Crouch();
             }
-            else if(Input.GetKeyUp(crouchKey) && holdToCrouch)
+            else if (Input.GetKeyUp(crouchKey) && holdToCrouch)
             {
                 isCrouched = true;
                 Crouch();
@@ -453,6 +459,7 @@ public class FirstPersonController : NetworkBehaviour
         {
             Debug.DrawRay(origin, direction * distance, Color.red);
             isGrounded = true;
+            canDoubleJump = true;
         }
         else
         {
@@ -463,7 +470,7 @@ public class FirstPersonController : NetworkBehaviour
     private void Jump()
     {
         // Adds force to the player rigidbody to jump
-        if (isGrounded)
+        if (isGrounded || canDoubleJump)
         {
             rb.AddForce(0f, jumpPower, 0f, ForceMode.Impulse);
             isGrounded = false;
