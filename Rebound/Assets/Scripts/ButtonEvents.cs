@@ -9,6 +9,11 @@ public class ButtonEvents : MonoBehaviour
     [SerializeField] NetworkManager networkManager;
     [SerializeField] TMP_InputField inputField;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void HostButtonEvent()
     {
         networkManager.StartHost();
