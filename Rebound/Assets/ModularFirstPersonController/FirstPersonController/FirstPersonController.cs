@@ -334,6 +334,7 @@ public class FirstPersonController : NetworkBehaviour
         }
         else if(enableJump && Input.GetKeyDown(jumpKey) && canDoubleJump)
         {
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             Jump();
             canDoubleJump = false;
         }

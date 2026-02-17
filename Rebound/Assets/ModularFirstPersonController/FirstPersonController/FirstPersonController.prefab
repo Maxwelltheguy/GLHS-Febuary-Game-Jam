@@ -173,6 +173,7 @@ MonoBehaviour:
   playerCanMove: 1
   walkSpeed: 7
   maxVelocityChange: 10
+  canDoubleJump: 0
   enableSprint: 0
   unlimitedSprint: 0
   sprintKey: 304
@@ -189,7 +190,7 @@ MonoBehaviour:
   sprintBarHeightPercent: 0.02
   enableJump: 1
   jumpKey: 32
-  jumpPower: 7.4
+  jumpPower: 8.4
   enableCrouch: 0
   holdToCrouch: 1
   crouchKey: 306
