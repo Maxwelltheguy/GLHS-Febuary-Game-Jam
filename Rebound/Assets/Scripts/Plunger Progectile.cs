@@ -5,15 +5,10 @@ using Mirror;
 
 public class PlungerProgectile : NetworkBehaviour
 {
-    
-
-    void Start()
-    {
-        
-    }
+    [SerializeField] float projSpeed;
 
     void Update()
     {
-        transform.localPosition = transform.localPosition + Vector3.forward * Time.deltaTime;
+        transform.position = transform.position + (transform.forward * projSpeed) * Time.deltaTime;// + new Vector3(0,0,projSpeed)
     }
 }
