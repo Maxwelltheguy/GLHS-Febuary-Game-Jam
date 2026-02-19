@@ -7,6 +7,9 @@ public class NetPlayerManager : NetworkBehaviour
 {
     [SerializeField] FirstPersonController myController;
     [SerializeField] Camera myCamera;
+    [SerializeField] Transform plungerThrowTransform;
+    [SerializeField] GameObject plungerObject;
+    [SerializeField] NetworkManager networkManager;
 
     void Start()
     {
@@ -16,8 +19,35 @@ public class NetPlayerManager : NetworkBehaviour
             myController.enabled = true;
             myCamera.enabled = true;
         }
-
+        networkManager = FindObjectOfType<NetworkManager>();
+        
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) & isLocalPlayer)
+        {
+            cmdItemThrowSpawn();
+        }
+    }
 
+    [Command]
+    void cmdItemThrowSpawn()
+    {
+
+        GameObject obj = plungerObject;
+        Transform pos = plungerThrowTransform;
+        obj.transform.position = pos.position;
+        obj.transform.rotation = pos.rotation;
+        obj = Instantiate(obj);
+        NetworkServer.Spawn(obj);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Respawn")
+        {
+            transform.position = networkManager.GetStartPosition().position;
+        }
+    }
 }

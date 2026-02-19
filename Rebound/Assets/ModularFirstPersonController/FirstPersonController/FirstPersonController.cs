@@ -58,8 +58,10 @@ public class FirstPersonController : NetworkBehaviour
 
     public bool playerCanMove = true;
     public float walkSpeed = 5f;
-    public float maxVelocityChange = 10f;
+    public float maxVelocityChange = 25f;
     public bool canDoubleJump = false;
+    public bool hitStun = false;
+    public int stunTimer = 0;
 
     // Internal Variables
     private bool isWalking = false;
@@ -370,6 +372,16 @@ public class FirstPersonController : NetworkBehaviour
         {
             HeadBob();
         }
+
+        /*if(stunTimer > 0)
+        {
+            stunTimer--;
+            hitStun = true;
+        }
+        else
+        {
+            hitStun = false;
+        }*/
     }
 
     void FixedUpdate()
@@ -442,7 +454,15 @@ public class FirstPersonController : NetworkBehaviour
                 velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
                 velocityChange.y = 0;
 
-                rb.AddForce(velocityChange, ForceMode.VelocityChange);
+                if (!hitStun)
+                {
+                    rb.AddForce(velocityChange, ForceMode.VelocityChange);
+                }
+                else
+                {
+                    rb.AddForce(velocityChange * 2, ForceMode.Acceleration);
+                }
+                
             }
         }
 
@@ -461,6 +481,7 @@ public class FirstPersonController : NetworkBehaviour
             Debug.DrawRay(origin, direction * distance, Color.red);
             isGrounded = true;
             canDoubleJump = true;
+            hitStun = false;
         }
         else
         {
@@ -474,6 +495,18 @@ public class FirstPersonController : NetworkBehaviour
         {
             Jump(2);
 
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Attack")
+        {
+            
+            rb.AddRelativeForce(new Vector3(0, 1, 0), ForceMode.Impulse);
+            rb.AddForce(other.transform.forward * 40, ForceMode.Impulse);
+            hitStun = true;
         }
     }
 
