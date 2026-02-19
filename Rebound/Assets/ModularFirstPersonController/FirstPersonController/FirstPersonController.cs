@@ -330,12 +330,12 @@ public class FirstPersonController : NetworkBehaviour
         // Gets input and calls jump method
         if(enableJump && Input.GetKeyDown(jumpKey) && isGrounded)
         {
-            Jump();
+            Jump(0);
         }
         else if(enableJump && Input.GetKeyDown(jumpKey) && canDoubleJump)
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-            Jump();
+            Jump(0);
             canDoubleJump = false;
         }
 
@@ -468,12 +468,22 @@ public class FirstPersonController : NetworkBehaviour
         }
     }
 
-    private void Jump()
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "JumpPad")
+        {
+            Jump(2);
+
+        }
+    }
+
+
+    private void Jump(int JumpModifier)
     {
         // Adds force to the player rigidbody to jump
         if (isGrounded || canDoubleJump)
         {
-            rb.AddForce(0f, jumpPower, 0f, ForceMode.Impulse);
+            rb.AddForce(0f, jumpPower + JumpModifier, 0f, ForceMode.Impulse);
             isGrounded = false;
         }
 
