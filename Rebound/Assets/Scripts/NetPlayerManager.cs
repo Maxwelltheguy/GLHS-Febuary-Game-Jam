@@ -10,6 +10,8 @@ public class NetPlayerManager : NetworkBehaviour
     [SerializeField] Transform plungerThrowTransform;
     [SerializeField] GameObject plungerObject;
     [SerializeField] NetworkManager networkManager;
+    [SerializeField] GameObject meleeObject;
+    [SyncVar] bool meleeActive = false;
 
     void Start()
     {
@@ -25,10 +27,25 @@ public class NetPlayerManager : NetworkBehaviour
 
     private void Update()
     {
+        if (meleeActive == true)
+        {
+            meleeObject.SetActive(true);
+            meleeActive = false;
+        }
+        else
+        {
+            meleeObject.SetActive(false);
+        }
         if (Input.GetMouseButtonDown(0) & isLocalPlayer)
         {
             cmdItemThrowSpawn();
         }
+        else if (Input.GetMouseButtonDown(1) & isLocalPlayer)
+        {
+            meleeActive = true;
+
+        }
+        
     }
 
     [Command]

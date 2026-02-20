@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce7cfcb2efe1bf4caa7fc9df65f858b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
+  syncDirection: 1
   syncMode: 0
   syncInterval: 0
   myController: {fileID: 4459864850019384740}
@@ -274,6 +274,7 @@ MonoBehaviour:
   plungerThrowTransform: {fileID: 3669929371073522081}
   plungerObject: {fileID: 6843632639094023129, guid: 06105480900a0db4cb0c35317115d12e, type: 3}
   networkManager: {fileID: 0}
+  meleeObject: {fileID: 5737017658156146652}
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
