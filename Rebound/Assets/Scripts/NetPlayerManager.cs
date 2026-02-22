@@ -13,7 +13,9 @@ public class NetPlayerManager : NetworkBehaviour
     [SerializeField] NetworkManager networkManager;
     [SerializeField] GameObject meleeObject;
     [SerializeField] int meleeTimer;
+    [SerializeField] Animator animator;
     [SyncVar] bool meleeActive = false;
+    [SyncVar] public bool isPlayerWalking = false;
 
     void Start()
     {
@@ -55,7 +57,18 @@ public class NetPlayerManager : NetworkBehaviour
             meleeTimer = 10;
 
         }
+        if (myController.isWalking & isLocalPlayer)
+        {
+            animator.SetBool("IsWalking", true);
+
+        }
+        else if (isLocalPlayer)
+        {
+            animator.SetBool("IsWalking", false);
+
+        }
         
+
     }
 
     private void FixedUpdate()

@@ -64,7 +64,7 @@ public class FirstPersonController : NetworkBehaviour
     public int stunTimer = 0;
 
     // Internal Variables
-    private bool isWalking = false;
+    public bool isWalking = false;
 
     #region Sprint
 
