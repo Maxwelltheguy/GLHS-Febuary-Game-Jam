@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 5136604512745685313}
   - component: {fileID: 9222683718368854256}
   - component: {fileID: 3404751455105587840}
+  - component: {fileID: 5417279748364240660}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -320,6 +321,23 @@ MonoBehaviour:
   syncInterval: 0
   clientAuthority: 1
   animator: {fileID: 9222683718368854256}
+--- !u!114 &5417279748364240660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459864850019384750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fff42a7b4121b141897fe278ae8086f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  rotationRef: {fileID: 4459864851310106424}
+  torsoBone: {fileID: 997076585213746810}
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1260,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+--- !u!1 &997076585213746810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1790183945725220954, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+  m_PrefabInstance: {fileID: 1517239250612471328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1334446966783091147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
