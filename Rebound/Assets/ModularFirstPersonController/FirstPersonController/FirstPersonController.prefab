@@ -275,6 +275,7 @@ MonoBehaviour:
   plungerObject: {fileID: 6843632639094023129, guid: 06105480900a0db4cb0c35317115d12e, type: 3}
   networkManager: {fileID: 0}
   meleeObject: {fileID: 5737017658156146652}
+  meleeTimer: 0
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +846,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737017658156146652}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

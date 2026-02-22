@@ -504,7 +504,7 @@ public class FirstPersonController : NetworkBehaviour
         if (other.gameObject.tag == "Attack")
         {
             
-            rb.AddRelativeForce(new Vector3(0, 1, 0), ForceMode.Impulse);
+            rb.AddRelativeForce(new Vector3(0, 3, 0), ForceMode.Impulse);
             rb.AddForce(other.transform.forward * 40, ForceMode.Impulse);
             hitStun = true;
         }

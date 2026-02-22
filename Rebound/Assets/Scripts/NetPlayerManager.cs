@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using System.Threading;
 
 public class NetPlayerManager : NetworkBehaviour
 {
@@ -11,6 +12,7 @@ public class NetPlayerManager : NetworkBehaviour
     [SerializeField] GameObject plungerObject;
     [SerializeField] NetworkManager networkManager;
     [SerializeField] GameObject meleeObject;
+    [SerializeField] int meleeTimer;
     [SyncVar] bool meleeActive = false;
 
     void Start()
@@ -27,10 +29,18 @@ public class NetPlayerManager : NetworkBehaviour
 
     private void Update()
     {
+        if (meleeTimer > 0 &isLocalPlayer)
+        {
+            meleeActive = true;
+        }
+        else if (isLocalPlayer)
+        {
+            meleeActive = false;
+        }
         if (meleeActive == true)
         {
             meleeObject.SetActive(true);
-            meleeActive = false;
+
         }
         else
         {
@@ -42,10 +52,18 @@ public class NetPlayerManager : NetworkBehaviour
         }
         else if (Input.GetMouseButtonDown(1) & isLocalPlayer)
         {
-            meleeActive = true;
+            meleeTimer = 10;
 
         }
         
+    }
+
+    private void FixedUpdate()
+    {
+        if (isLocalPlayer && meleeActive)
+        {
+            meleeTimer--;
+        }
     }
 
     [Command]
