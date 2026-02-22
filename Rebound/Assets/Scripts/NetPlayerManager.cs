@@ -51,11 +51,13 @@ public class NetPlayerManager : NetworkBehaviour
         if (Input.GetMouseButtonDown(0) & isLocalPlayer)
         {
             cmdItemThrowSpawn();
+            animator.SetTrigger("Throw");
+            
         }
         else if (Input.GetMouseButtonDown(1) & isLocalPlayer)
         {
             meleeTimer = 10;
-
+            animator.SetTrigger("Slap");
         }
         if (myController.isWalking & isLocalPlayer)
         {
