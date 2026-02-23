@@ -7,12 +7,18 @@ using UnityEngine.UIElements;
 public class BGMController : MonoBehaviour
 {
     [SerializeField] AudioClip[] Music;
+    [SerializeField] AudioClip clipToPlay;
     [SerializeField] AudioSource audioSource;
 
-    private void Start()
+    private void Update()
     {
-        audioSource.clip = Music[Random.Range(0, Music.Length)];
-        audioSource.Play();
+        if (audioSource.isPlaying == false)
+        {
+            clipToPlay = Music[Random.Range(0, Music.Length)];
+            audioSource.clip = clipToPlay;
+            audioSource.Play();
+        }
+        
     }
 
 
