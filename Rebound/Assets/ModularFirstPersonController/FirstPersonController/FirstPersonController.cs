@@ -155,6 +155,7 @@ public class FirstPersonController : NetworkBehaviour
 
     void Start()
     {
+        mouseSensitivity = PlayerPrefs.GetFloat("sensitivity");
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
