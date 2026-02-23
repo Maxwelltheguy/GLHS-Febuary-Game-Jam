@@ -15,6 +15,7 @@ public class EscMenu : MonoBehaviour
     [SerializeField] private GameObject canvas; // references the canvas for enabling/disabling
     [SerializeField] NetworkManager networkManager;
     [SerializeField] TMP_Text ipText;
+    
 
     private void Start()
     {

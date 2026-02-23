@@ -9,7 +9,21 @@ public class PlayerModelManager : NetworkBehaviour
     [SerializeField] GameObject rotationRef;
     [SerializeField] GameObject torsoBone;
     [SyncVar] Quaternion targetRotation = Quaternion.identity;
-    
+    [SerializeField] SkinnedMeshRenderer playerMesh;
+    [SerializeField] Material[] materials;
+    [SyncVar] int selectedColor;
+    //EscMenu EscMenu;
+
+    private void Start()
+    {
+        //EscMenu = FindAnyObjectByType<EscMenu>();
+        if (isLocalPlayer)
+        {
+            selectedColor = Random.Range(0, materials.Length);
+        }
+        
+    }
+
     void Update()
     {
 
@@ -22,6 +36,10 @@ public class PlayerModelManager : NetworkBehaviour
         {
             targetRotation = rotationRef.transform.rotation;
         }
-        
+        if (playerMesh != null)
+        {
+            playerMesh.material = materials[selectedColor];
+        }
+
     }
 }
