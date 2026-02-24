@@ -495,8 +495,9 @@ MonoBehaviour:
   syncInterval: 0
   audioSource: {fileID: 7155138389355938514}
   jumpClip: {fileID: 8300000, guid: 18200edb39556f34bb323665f83673dc, type: 3}
-  jumpPadClip: {fileID: 8300000, guid: 4a788ad86e906fb48b0dce71391553de, type: 3}
+  jumpPadClip: {fileID: 8300000, guid: dc88981d309769f488ce74b179bae2af, type: 3}
   throwClip: {fileID: 8300000, guid: a5ff88c7977cd274e8bb6e5337cc0d1c, type: 3}
+  hitClip: {fileID: 8300000, guid: e35d89b4fc5ecf4449a86870f6d1deed, type: 3}
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0

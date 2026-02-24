@@ -528,7 +528,7 @@ public class FirstPersonController : NetworkBehaviour
             {
                 rb.AddRelativeForce(new Vector3(0, 4, 0), ForceMode.Impulse);
             }
-            
+            sfxController.PlayHitSFX();
         }
     }
 

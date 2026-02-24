@@ -9,6 +9,7 @@ public class PlayerSFXController : NetworkBehaviour
     [SerializeField] AudioClip jumpClip;
     [SerializeField] AudioClip jumpPadClip;
     [SerializeField] AudioClip throwClip;
+    [SerializeField] AudioClip hitClip;
 
  
     public void PlayJumpSFX()
@@ -21,9 +22,17 @@ public class PlayerSFXController : NetworkBehaviour
         audioSource.clip = jumpPadClip;
         audioSource.Play();
     }
-    public void ThrowSFX()
+    public void PlayHitSFX()
     {
-        audioSource.clip = throwClip;
+        audioSource.clip = hitClip;
         audioSource.Play();
+    }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            audioSource.clip = throwClip;
+            audioSource.Play();
+        }
     }
 }
