@@ -10,7 +10,12 @@ public class PlungerProgectile : NetworkBehaviour
 
     private void Start()
     {
+        if (isOwned)
+        {
+            gameObject.tag = "MyAttack";
+        }
         networkManager = FindObjectOfType<NetworkManager>();
+        
     }
     void Update()
     {
@@ -22,6 +27,10 @@ public class PlungerProgectile : NetworkBehaviour
         else
         {
             NetworkServer.Destroy(gameObject);
+        }
+        if (!isOwned)
+        {
+            gameObject.tag = "Attack";
         }
     }
 

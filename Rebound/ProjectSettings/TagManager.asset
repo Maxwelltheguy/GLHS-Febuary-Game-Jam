@@ -6,6 +6,7 @@ TagManager:
   tags:
   - JumpPad
   - Attack
+  - MyAttack
   layers:
   - Default
   - TransparentFX

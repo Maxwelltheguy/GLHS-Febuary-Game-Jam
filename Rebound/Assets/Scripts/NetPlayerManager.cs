@@ -31,6 +31,7 @@ public class NetPlayerManager : NetworkBehaviour
 
     private void Update()
     {
+        
         if (meleeTimer > 0 &isLocalPlayer)
         {
             meleeActive = true;
@@ -50,7 +51,8 @@ public class NetPlayerManager : NetworkBehaviour
         }
         if (Input.GetMouseButtonDown(0) & isLocalPlayer)
         {
-            cmdItemThrowSpawn();
+            cmdItemThrowSpawn(gameObject);
+            
             animator.SetTrigger("Throw");
             
         }
@@ -82,7 +84,7 @@ public class NetPlayerManager : NetworkBehaviour
     }
 
     [Command]
-    void cmdItemThrowSpawn()
+    void cmdItemThrowSpawn(GameObject player)
     {
 
         GameObject obj = plungerObject;
@@ -90,7 +92,10 @@ public class NetPlayerManager : NetworkBehaviour
         obj.transform.position = pos.position;
         obj.transform.rotation = pos.rotation;
         obj = Instantiate(obj);
-        NetworkServer.Spawn(obj);
+        
+        NetworkServer.Spawn(obj, player);
+        
+
     }
 
     private void OnCollisionEnter(Collision collision)

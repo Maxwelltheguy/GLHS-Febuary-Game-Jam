@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3833560719471992595}
   m_Layer: 0
   m_Name: PlungerProjectile
-  m_TagString: Attack
+  m_TagString: MyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843632639094023129}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08188362, y: 0.8934594, z: -0.18177639, w: -0.4024708}
-  m_LocalPosition: {x: 9.554078, y: 4.99991, z: -10.2538395}
+  m_LocalRotation: {x: 0.035128247, y: 0.886393, z: -0.06820425, w: 0.45653215}
+  m_LocalPosition: {x: -13.459415, y: -0.16689983, z: -1.538665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

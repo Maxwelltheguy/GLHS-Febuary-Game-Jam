@@ -60,6 +60,7 @@ public class FirstPersonController : NetworkBehaviour
     public float walkSpeed = 5f;
     public float maxVelocityChange = 25f;
     public bool canDoubleJump = false;
+    public bool canDash = false;
     public bool hitStun = false;
     public int stunTimer = 0;
 
@@ -367,6 +368,16 @@ public class FirstPersonController : NetworkBehaviour
 
         #endregion
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (canDash)
+            {
+                Dash();
+                canDash = false;
+            }
+            
+        }
+
         CheckGround();
 
         if(enableHeadBob)
@@ -482,6 +493,7 @@ public class FirstPersonController : NetworkBehaviour
             Debug.DrawRay(origin, direction * distance, Color.red);
             isGrounded = true;
             canDoubleJump = true;
+            canDash = true;
             hitStun = false;
         }
         else
@@ -502,15 +514,27 @@ public class FirstPersonController : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.tag == "Attack")
         {
+            if (!isGrounded)
+            {
+                rb.AddForce(other.transform.forward * 40, ForceMode.Impulse);
+                hitStun = true;
+            }
+            else
+            {
+                rb.AddRelativeForce(new Vector3(0, 4, 0), ForceMode.Impulse);
+            }
             
-            rb.AddRelativeForce(new Vector3(0, 3, 0), ForceMode.Impulse);
-            rb.AddForce(other.transform.forward * 40, ForceMode.Impulse);
-            hitStun = true;
         }
     }
 
+    private void Dash()
+    {
+        rb.AddForce(playerCamera.transform.forward * 40, ForceMode.Impulse);
+        hitStun = true;
+    }
 
     private void Jump(int JumpModifier)
     {
