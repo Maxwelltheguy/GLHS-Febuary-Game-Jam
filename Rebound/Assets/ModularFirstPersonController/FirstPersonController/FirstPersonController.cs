@@ -102,9 +102,10 @@ public class FirstPersonController : NetworkBehaviour
     public bool enableJump = true;
     public KeyCode jumpKey = KeyCode.Space;
     public float jumpPower = 5f;
+    public PlayerSFXController sfxController;
 
     // Internal Variables
-    private bool isGrounded = false;
+    public bool isGrounded = false;
 
     #endregion
 
@@ -139,6 +140,7 @@ public class FirstPersonController : NetworkBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        sfxController = GetComponent<PlayerSFXController>();
 
         crosshairObject = GetComponentInChildren<Image>();
 
@@ -542,6 +544,7 @@ public class FirstPersonController : NetworkBehaviour
         if (isGrounded || canDoubleJump)
         {
             rb.AddForce(0f, jumpPower + JumpModifier, 0f, ForceMode.Impulse);
+            sfxController.PlayJumpSFX();
             isGrounded = false;
         }
 
