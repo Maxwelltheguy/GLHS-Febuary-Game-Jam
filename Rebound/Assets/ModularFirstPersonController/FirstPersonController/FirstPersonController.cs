@@ -509,7 +509,7 @@ public class FirstPersonController : NetworkBehaviour
         if (collision.gameObject.tag == "JumpPad")
         {
             Jump(2);
-
+            sfxController.PlayJumpPadSFX();
         }
 
     }

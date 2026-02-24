@@ -233,6 +233,8 @@ MonoBehaviour:
   enableJump: 1
   jumpKey: 32
   jumpPower: 8.4
+  sfxController: {fileID: 0}
+  isGrounded: 0
   enableCrouch: 0
   holdToCrouch: 1
   crouchKey: 306
@@ -488,9 +490,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc70d93a6abd49a409455c7b056a3885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 4459864850019384740}
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   audioSource: {fileID: 7155138389355938514}
   jumpClip: {fileID: 8300000, guid: 18200edb39556f34bb323665f83673dc, type: 3}
+  jumpPadClip: {fileID: 8300000, guid: 4a788ad86e906fb48b0dce71391553de, type: 3}
+  throwClip: {fileID: 8300000, guid: a5ff88c7977cd274e8bb6e5337cc0d1c, type: 3}
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
