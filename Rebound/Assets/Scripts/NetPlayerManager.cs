@@ -14,6 +14,7 @@ public class NetPlayerManager : NetworkBehaviour
     [SerializeField] GameObject meleeObject;
     [SerializeField] int meleeTimer;
     [SerializeField] Animator animator;
+    [SerializeField] PlayerSFXController sfxController;
     [SyncVar] bool meleeActive = false;
     [SyncVar] public bool isPlayerWalking = false;
 
@@ -26,7 +27,7 @@ public class NetPlayerManager : NetworkBehaviour
             myCamera.enabled = true;
         }
         networkManager = FindObjectOfType<NetworkManager>();
-        
+        sfxController = GetComponent<PlayerSFXController>();
     }
 
     private void Update()
@@ -103,6 +104,7 @@ public class NetPlayerManager : NetworkBehaviour
         if (collision.gameObject.tag == "Respawn")
         {
             transform.position = networkManager.GetStartPosition().position;
+            sfxController.PlayRespawnSFX();
         }
     }
 }

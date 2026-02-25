@@ -10,7 +10,7 @@ public class PlayerSFXController : NetworkBehaviour
     [SerializeField] AudioClip jumpPadClip;
     [SerializeField] AudioClip throwClip;
     [SerializeField] AudioClip hitClip;
-
+    [SerializeField] AudioClip respawnClip;
  
     public void PlayJumpSFX()
     {
@@ -27,6 +27,13 @@ public class PlayerSFXController : NetworkBehaviour
         audioSource.clip = hitClip;
         audioSource.Play();
     }
+
+    public void PlayRespawnSFX()
+    {
+        audioSource.clip = respawnClip;
+        audioSource.Play();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
