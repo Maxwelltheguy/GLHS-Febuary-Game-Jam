@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "com.heathen.steamworksfoundation": "file:C:/Users/maxwe/Documents/GitHub/Toolkit-for-Steamworks-Foundation/Legacy/Unity/com.heathen.steamworksfoundation",
+    "com.heathen.systemcore": "file:C:/Users/maxwe/Documents/GitHub/SystemCore/com.heathen.systemcore",
+    "com.mirror.steamworks.net": "https://github.com/Chykary/FizzySteamworks.git?path=/com.mirror.steamworks.net",
+    "com.rlabrecque.steamworks.net": "https://github.com/rlabrecque/Steamworks.NET.git?path=/com.rlabrecque.steamworks.net#2025.161.0",
     "com.unity.collab-proxy": "2.11.3",
     "com.unity.feature.development": "1.0.1",
     "com.unity.nuget.newtonsoft-json": "3.2.1",

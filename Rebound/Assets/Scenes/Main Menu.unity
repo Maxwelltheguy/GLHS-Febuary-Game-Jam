@@ -2592,7 +2592,8 @@ GameObject:
   - component: {fileID: 1040802674}
   - component: {fileID: 1040802676}
   - component: {fileID: 1040802675}
-  - component: {fileID: 1040802677}
+  - component: {fileID: 1040802678}
+  - component: {fileID: 1040802679}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -2649,7 +2650,7 @@ MonoBehaviour:
   offlineScene: Assets/Scenes/Main Menu.unity
   onlineScene: Assets/Scenes/SampleScene.unity
   offlineSceneLoadDelay: 0
-  transport: {fileID: 1040802677}
+  transport: {fileID: 1040802678}
   networkAddress: localhost
   maxConnections: 100
   disconnectInactiveConnections: 0
@@ -2676,7 +2677,7 @@ MonoBehaviour:
   evaluationMethod: 0
   evaluationInterval: 3
   timeInterpolationGui: 0
---- !u!114 &1040802677
+--- !u!114 &1040802678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2685,28 +2686,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1040802673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7e416e0486524f0d9580be7e13388f4, type: 3}
+  m_Script: {fileID: 11500000, guid: e6e55fca1f4e4844593a3dd65a3ecb39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sleepDetection: 1
-  sleepTimeoutInSeconds: 30
-  port: 7777
-  DualMode: 1
-  NoDelay: 1
-  Interval: 10
-  Timeout: 10000
-  RecvBufferSize: 7361536
-  SendBufferSize: 7361536
-  FastResend: 2
-  ReceiveWindowSize: 4096
-  SendWindowSize: 4096
-  MaxRetransmit: 40
-  MaximizeSocketBuffers: 1
-  ReliableMaxMessageSize: 297433
-  UnreliableMaxMessageSize: 1194
-  debugLog: 0
-  statisticsGUI: 0
-  statisticsLog: 0
+  Channels: 0200000001000000
+  Timeout: 25
+  AllowSteamRelay: 1
+  UseNextGenSteamNetworking: 1
+--- !u!114 &1040802679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040802673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6744dee92edb0644187ce80d13e8db2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createOnStart: 1
+  markAsDoNotDestroy: 0
+  settings: {fileID: 11400000, guid: b10f41a9e4e8a9d4e8c066acef6cc851, type: 2}
+  evtSteamInitialized:
+    m_PersistentCalls:
+      m_Calls: []
+  evtSteamInitializationError:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1074097514
 GameObject:
   m_ObjectHideFlags: 0
@@ -5639,6 +5646,6 @@ SceneRoots:
   - {fileID: 264144958}
   - {fileID: 432725457}
   - {fileID: 972979004}
-  - {fileID: 1040802674}
   - {fileID: 1936084877}
   - {fileID: 1655887474}
+  - {fileID: 1040802674}
