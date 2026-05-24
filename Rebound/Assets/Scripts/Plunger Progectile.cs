@@ -5,32 +5,41 @@ using Mirror;
 
 public class PlungerProgectile : NetworkBehaviour
 {
-    [SerializeField] float projSpeed;
+    public float projSpeed;
+    public float projPowerMult;
+    public int projCooldown;
+    [SerializeField] bool plungerCodeOff = false;
     [SerializeField] NetworkManager networkManager;
 
     private void Start()
     {
-        if (isOwned)
+        if (plungerCodeOff == false)
         {
-            gameObject.tag = "MyAttack";
+            if (isOwned)
+            {
+                gameObject.tag = "MyAttack";
+            }
+            networkManager = FindObjectOfType<NetworkManager>();
         }
-        networkManager = FindObjectOfType<NetworkManager>();
         
     }
     void Update()
     {
-        transform.position = transform.position + (transform.forward * projSpeed) * Time.deltaTime;// + new Vector3(0,0,projSpeed)
-        if (transform.position.x < 100 &  transform.position.x > -100 & transform.position.y < 100 & transform.position.y > -100 & transform.position.z < 100 & transform.position.z > -100)
+        if (plungerCodeOff == false)
         {
+            transform.position = transform.position + (transform.forward * projSpeed) * Time.deltaTime;// + new Vector3(0,0,projSpeed)
+            if (transform.position.x < 100 & transform.position.x > -100 & transform.position.y < 100 & transform.position.y > -100 & transform.position.z < 100 & transform.position.z > -100)
+            {
 
-        }
-        else
-        {
-            NetworkServer.Destroy(gameObject);
-        }
-        if (!isOwned)
-        {
-            gameObject.tag = "Attack";
+            }
+            else
+            {
+                NetworkServer.Destroy(gameObject);
+            }
+            if (!isOwned)
+            {
+                gameObject.tag = "Attack";
+            }
         }
     }
 

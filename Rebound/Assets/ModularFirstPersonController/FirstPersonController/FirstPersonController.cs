@@ -523,14 +523,21 @@ public class FirstPersonController : NetworkBehaviour
         
         if (other.gameObject.tag == "Attack")
         {
+            PlungerProgectile proj = other.gameObject.GetComponent<PlungerProgectile>();
+            if (proj == null)
+            {
+                proj = new PlungerProgectile();
+                proj.projPowerMult = 1;
+            }
             if (!isGrounded)
             {
-                rb.AddForce(other.transform.forward * 40, ForceMode.Impulse);
+                
+                rb.AddForce((other.transform.forward * 40) * proj.projPowerMult , ForceMode.Impulse);
                 hitStun = true;
             }
             else
             {
-                rb.AddRelativeForce(new Vector3(0, 4, 0), ForceMode.Impulse);
+                rb.AddRelativeForce(new Vector3(0, 4 * proj.projPowerMult, 0), ForceMode.Impulse);
             }
             sfxController.PlayHitSFX();
         }

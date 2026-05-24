@@ -13,9 +13,11 @@ public class NetPlayerManager : NetworkBehaviour
     [SerializeField] NetworkManager networkManager;
     [SerializeField] GameObject meleeObject;
     [SerializeField] int meleeTimer;
+    public float plungerTimer; //public for debuging
     [SerializeField] Animator animator;
     [SerializeField] PlayerSFXController sfxController;
     [SyncVar] bool meleeActive = false;
+    [SyncVar] bool plungerActive = false;
     [SyncVar] public bool isPlayerWalking = false;
     [SyncVar] int currPlunger = 0;
 
@@ -42,6 +44,14 @@ public class NetPlayerManager : NetworkBehaviour
         {
             meleeActive = false;
         }
+        if (plungerTimer > 0 & isLocalPlayer)
+        {
+            plungerActive = false;
+        }
+        else if (isLocalPlayer)
+        {
+            plungerActive = true;
+        }
         if (meleeActive == true)
         {
             meleeObject.SetActive(true);
@@ -53,10 +63,17 @@ public class NetPlayerManager : NetworkBehaviour
         }
         if (Input.GetMouseButtonDown(0) & isLocalPlayer)
         {
-            currPlunger = PlayerPrefs.GetInt("currPlunger", 0);
-            cmdItemThrowSpawn(gameObject, currPlunger);
+            if (plungerActive)
+            {
+                currPlunger = PlayerPrefs.GetInt("currPlunger", 0);
+
+                //Sets Cooldown
+                plungerTimer = plungerObject[currPlunger].GetComponent<PlungerProgectile>().projCooldown;
+                sfxController.PlayThrowSFX();
+                cmdItemThrowSpawn(gameObject, currPlunger);
+                animator.SetTrigger("Throw");
+            }
             
-            animator.SetTrigger("Throw");
             
         }
         else if (Input.GetMouseButtonDown(1) & isLocalPlayer)
@@ -80,9 +97,10 @@ public class NetPlayerManager : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if (isLocalPlayer && meleeActive)
+        if (isLocalPlayer )
         {
             meleeTimer--;
+            plungerTimer--;
         }
     }
 

@@ -34,7 +34,7 @@ public class PlayerSFXController : NetworkBehaviour
         audioSource.Play();
     }
 
-    void Update()
+    public void PlayThrowSFX()
     {
         if (Input.GetMouseButtonDown(0))
         {
