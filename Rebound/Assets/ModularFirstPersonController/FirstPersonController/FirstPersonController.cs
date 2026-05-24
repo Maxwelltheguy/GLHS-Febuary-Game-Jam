@@ -492,11 +492,15 @@ public class FirstPersonController : NetworkBehaviour
 
         if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
         {
+            if (hit.collider.gameObject.tag != "MyAttack")
+            {
+                isGrounded = true;
+                canDoubleJump = true;
+                canDash = true;
+                hitStun = false;
+            }
             Debug.DrawRay(origin, direction * distance, Color.red);
-            isGrounded = true;
-            canDoubleJump = true;
-            canDash = true;
-            hitStun = false;
+            
         }
         else
         {
