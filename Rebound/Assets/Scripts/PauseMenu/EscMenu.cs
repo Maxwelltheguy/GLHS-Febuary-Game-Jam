@@ -47,6 +47,10 @@ public class EscMenu : MonoBehaviour
         }
     }
 
+    public void SetPlayerPlunger(int plunger)
+    {
+        PlayerPrefs.SetInt("currPlunger", plunger);
+    }
 
     public void QuitToMenu()
     {

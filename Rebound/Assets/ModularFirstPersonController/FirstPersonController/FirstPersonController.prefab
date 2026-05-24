@@ -313,12 +313,14 @@ MonoBehaviour:
   myController: {fileID: 4459864850019384740}
   myCamera: {fileID: 4459864851310106426}
   plungerThrowTransform: {fileID: 3669929371073522081}
-  plungerObject: {fileID: 6843632639094023129, guid: 06105480900a0db4cb0c35317115d12e, type: 3}
+  plungerObject:
+  - {fileID: 6843632639094023129, guid: 06105480900a0db4cb0c35317115d12e, type: 3}
+  - {fileID: 6843632639094023129, guid: ea1191989dfabe64c88d1cf2ea4190eb, type: 3}
   networkManager: {fileID: 0}
   meleeObject: {fileID: 5737017658156146652}
   meleeTimer: 0
   animator: {fileID: 9222683718368854256}
-  sfxController: {fileID: 0}
+  sfxController: {fileID: 8680381586155800828}
   isPlayerWalking: 1
 --- !u!95 &9222683718368854256
 Animator:

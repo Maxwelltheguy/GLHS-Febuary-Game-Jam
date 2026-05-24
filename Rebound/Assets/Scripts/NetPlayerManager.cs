@@ -9,7 +9,7 @@ public class NetPlayerManager : NetworkBehaviour
     [SerializeField] FirstPersonController myController;
     [SerializeField] Camera myCamera;
     [SerializeField] Transform plungerThrowTransform;
-    [SerializeField] GameObject plungerObject;
+    [SerializeField] GameObject[] plungerObject;
     [SerializeField] NetworkManager networkManager;
     [SerializeField] GameObject meleeObject;
     [SerializeField] int meleeTimer;
@@ -17,6 +17,7 @@ public class NetPlayerManager : NetworkBehaviour
     [SerializeField] PlayerSFXController sfxController;
     [SyncVar] bool meleeActive = false;
     [SyncVar] public bool isPlayerWalking = false;
+    [SyncVar] int currPlunger = 0;
 
     void Start()
     {
@@ -52,7 +53,8 @@ public class NetPlayerManager : NetworkBehaviour
         }
         if (Input.GetMouseButtonDown(0) & isLocalPlayer)
         {
-            cmdItemThrowSpawn(gameObject);
+            currPlunger = PlayerPrefs.GetInt("currPlunger", 0);
+            cmdItemThrowSpawn(gameObject, currPlunger);
             
             animator.SetTrigger("Throw");
             
@@ -85,10 +87,10 @@ public class NetPlayerManager : NetworkBehaviour
     }
 
     [Command]
-    void cmdItemThrowSpawn(GameObject player)
+    void cmdItemThrowSpawn(GameObject player, int plunger)
     {
 
-        GameObject obj = plungerObject;
+        GameObject obj = plungerObject[plunger];
         Transform pos = plungerThrowTransform;
         obj.transform.position = pos.position;
         obj.transform.rotation = pos.rotation;
