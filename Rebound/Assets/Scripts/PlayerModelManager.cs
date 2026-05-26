@@ -19,7 +19,7 @@ public class PlayerModelManager : NetworkBehaviour
         //EscMenu = FindAnyObjectByType<EscMenu>();
         if (isLocalPlayer)
         {
-            selectedColor = Random.Range(0, materials.Length);
+            selectedColor = PlayerPrefs.GetInt("playerColor", Random.Range(0, materials.Length));
         }
         
     }

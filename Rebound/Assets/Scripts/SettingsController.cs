@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsController : MonoBehaviour
 {
     [SerializeField] Slider slider;
+    [SerializeField] TMP_Dropdown colorDrop;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,13 @@ public class SettingsController : MonoBehaviour
         {
             slider.value = PlayerPrefs.GetFloat("sensitivity", 2f);
         }
+        colorDrop.value = PlayerPrefs.GetInt("playerColor", 0);
     }
 
+    public void ChangeColorToValue()
+    {
+        PlayerPrefs.SetInt("playerColor", colorDrop.value);
+    }
     
     public void ChangePrefToValue()
     {
