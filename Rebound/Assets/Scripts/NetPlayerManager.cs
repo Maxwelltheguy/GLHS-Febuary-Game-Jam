@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using System.Threading;
+using TMPro;
 
 public class NetPlayerManager : NetworkBehaviour
 {
@@ -16,6 +17,8 @@ public class NetPlayerManager : NetworkBehaviour
     public float plungerTimer; //public for debuging
     [SerializeField] Animator animator;
     [SerializeField] PlayerSFXController sfxController;
+    [SerializeField] TMP_Text damageText;
+    [SerializeField] bool showDamage = true;
     [SyncVar] bool meleeActive = false;
     [SyncVar] bool plungerActive = false;
     [SyncVar] public bool isPlayerWalking = false;
@@ -31,6 +34,7 @@ public class NetPlayerManager : NetworkBehaviour
         }
         networkManager = FindObjectOfType<NetworkManager>();
         sfxController = GetComponent<PlayerSFXController>();
+        Respawn();
     }
 
     private void Update()
@@ -92,6 +96,32 @@ public class NetPlayerManager : NetworkBehaviour
 
         }
         
+        if (damageText != null)
+        {
+            damageText.enabled = showDamage;
+            if (isLocalPlayer)
+            {
+                damageText.text = myController.playerDamage.ToString() + "x";
+                damageText.color = new Color(1, 1 / myController.playerDamage, 1/ myController.playerDamage);
+
+            }
+            else
+            {
+                Destroy(damageText.gameObject);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (showDamage == true)
+            {
+                showDamage = false;
+            }
+            else
+            {
+                showDamage = true;
+            }
+        }
 
     }
 
@@ -123,8 +153,14 @@ public class NetPlayerManager : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Respawn")
         {
-            transform.position = networkManager.GetStartPosition().position;
-            sfxController.PlayRespawnSFX();
+            Respawn();
         }
+    }
+
+    public void Respawn()
+    {
+        transform.position = networkManager.GetStartPosition().position;
+        myController.playerDamage = 0f;
+        sfxController.PlayRespawnSFX();
     }
 }

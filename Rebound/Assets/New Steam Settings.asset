@@ -25,7 +25,7 @@ MonoBehaviour:
     serverVersion: 1.0.0.0
     spectatorPort: 27017
     usingGameServerAuthApi: 0
-    enableHeartbeats: 1
+    enableHeartbeats: 0
     supportSpectators: 0
     spectatorServerName: Usually GameDescription + Spectator
     anonymousServerLogin: 0

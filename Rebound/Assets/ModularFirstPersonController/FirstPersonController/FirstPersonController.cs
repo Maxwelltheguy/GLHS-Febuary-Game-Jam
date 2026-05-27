@@ -137,6 +137,9 @@ public class FirstPersonController : NetworkBehaviour
 
     #endregion
 
+    public float playerDamage = 0;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -531,12 +534,13 @@ public class FirstPersonController : NetworkBehaviour
             }
             if (!isGrounded)
             {
-                
-                rb.AddForce((other.transform.forward * 40) * proj.projPowerMult , ForceMode.Impulse);
+                playerDamage = playerDamage + proj.projPowerMult;
+                rb.AddForce((other.transform.forward * 40) * (playerDamage * 0.07f) , ForceMode.Impulse);
                 hitStun = true;
             }
             else
             {
+                playerDamage = playerDamage + proj.projPowerMult;
                 rb.AddRelativeForce(new Vector3(0, 4 * proj.projPowerMult, 0), ForceMode.Impulse);
             }
             sfxController.PlayHitSFX();
