@@ -3,7 +3,27 @@ guid: 64a6b6558f4b84f45a02a83d597021d4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseMaterial
+    second: {fileID: 2100000, guid: 9231097482098d5468e8fe699ba2745c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hover
+    second: {fileID: 2100000, guid: 6dd89d372f71fc042b969867265c85fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JumpPadTop
+    second: {fileID: 2100000, guid: 9e77ae28029f3fb41bdd8611f8434456, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlatformTop
+    second: {fileID: 2100000, guid: 47ea7604ff2e53e4fb31f67c3c9b4afe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

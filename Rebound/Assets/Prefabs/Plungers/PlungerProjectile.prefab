@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843632639094023129}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.10097894, y: 0.13500793, z: -0.013832301, w: -0.98558855}
-  m_LocalPosition: {x: -10.404214, y: 5.599965, z: -0.9844087}
+  m_LocalRotation: {x: 0.56676584, y: 0.11131359, z: -0.07763578, w: 0.81262445}
+  m_LocalPosition: {x: 0.97632223, y: 10.31455, z: -0.61569923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -210,6 +210,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 221127d0b2edcb84ca8465de321cbe8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2806a743af7adc642bf99c5e7a21ec8b, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 221127d0b2edcb84ca8465de321cbe8b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d245f04b73106d44a476983877eb5bb, type: 2}
     - target: {fileID: 919132149155446097, guid: 221127d0b2edcb84ca8465de321cbe8b, type: 3}
       propertyPath: m_Name
       value: Plunger

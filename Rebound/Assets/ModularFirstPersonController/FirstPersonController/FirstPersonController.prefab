@@ -324,6 +324,7 @@ MonoBehaviour:
   animator: {fileID: 9222683718368854256}
   sfxController: {fileID: 8680381586155800828}
   damageText: {fileID: 8358847443205286577}
+  showDamage: 1
   isPlayerWalking: 1
 --- !u!95 &9222683718368854256
 Animator:
@@ -1538,19 +1539,19 @@ PrefabInstance:
     - target: {fileID: 1630794972795428178, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2740491068722401411, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      objectReference: {fileID: 2100000, guid: 7ded05f86f9870e4db8277552eb8f79d, type: 2}
     - target: {fileID: 1630794972795428178, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: -5637652675625914632, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      objectReference: {fileID: 2100000, guid: 1c13013ebc68f5e44b355ad7198a03ec, type: 2}
     - target: {fileID: 1630794972795428178, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 4835078630258379571, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      objectReference: {fileID: 2100000, guid: d00a6237b19ab124ca229b47c1ceb2fb, type: 2}
     - target: {fileID: 1630794972795428178, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: -4156711385485655482, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      objectReference: {fileID: 2100000, guid: 69da1b249b2774f49bd149af8ce3fd6f, type: 2}
     - target: {fileID: 5788868806342031953, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000000038349817
