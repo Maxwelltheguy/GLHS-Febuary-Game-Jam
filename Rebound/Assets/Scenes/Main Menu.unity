@@ -3714,7 +3714,7 @@ MonoBehaviour:
   editorAutoStart: 0
   sendRate: 60
   offlineScene: Assets/Scenes/Main Menu.unity
-  onlineScene: Assets/Scenes/SampleScene.unity
+  onlineScene: Assets/Scenes/rb_void_01.unity
   offlineSceneLoadDelay: 0
   transport: {fileID: 1040802680}
   networkAddress: localhost
@@ -6295,8 +6295,8 @@ MonoBehaviour:
   colorDrop: {fileID: 154469443}
   sceneDrop: {fileID: 693431050}
   levelScenes:
-  - SampleScene
-  - Level2
+  - rb_void_01
+  - rb_level2_01
   networkManager: {fileID: 1040802676}
 --- !u!1 &1669901377
 GameObject:
