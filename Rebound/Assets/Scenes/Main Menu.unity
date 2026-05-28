@@ -2937,6 +2937,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Level 2
       m_Image: {fileID: 0}
+    - m_Text: Void02
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6297,6 +6299,7 @@ MonoBehaviour:
   levelScenes:
   - rb_void_01
   - rb_level2_01
+  - rb_void_02
   networkManager: {fileID: 1040802676}
 --- !u!1 &1669901377
 GameObject:
