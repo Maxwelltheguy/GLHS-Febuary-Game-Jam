@@ -151,7 +151,7 @@ public class NetPlayerManager : NetworkBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Respawn")
+        if (collision.gameObject.tag == "Respawn" & isLocalPlayer)
         {
             Respawn();
         }

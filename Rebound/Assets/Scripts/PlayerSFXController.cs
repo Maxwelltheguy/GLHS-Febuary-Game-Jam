@@ -36,10 +36,7 @@ public class PlayerSFXController : NetworkBehaviour
 
     public void PlayThrowSFX()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            audioSource.clip = throwClip;
-            audioSource.Play();
-        }
+        audioSource.clip = throwClip;
+        audioSource.Play();
     }
 }
