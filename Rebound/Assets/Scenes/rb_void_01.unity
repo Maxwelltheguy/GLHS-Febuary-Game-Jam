@@ -10735,6 +10735,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2102890271}
+    - target: {fileID: 8566356120857036886, guid: 7289df43c70841c4784241c1ecd9091b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2102890271}
+    - target: {fileID: 8566356120857036886, guid: 7289df43c70841c4784241c1ecd9091b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetPlayerPlunger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566356120857036886, guid: 7289df43c70841c4784241c1ecd9091b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -72,7 +72,13 @@ public class NetPlayerManager : NetworkBehaviour
                 currPlunger = PlayerPrefs.GetInt("currPlunger", 0);
 
                 //Sets Cooldown
-                plungerTimer = plungerObject[currPlunger].GetComponent<PlungerProgectile>().projCooldown;
+                PlungerProgectile proj = plungerObject[currPlunger].GetComponent<PlungerProgectile>();
+                if (proj == null)
+                {
+                    proj = new PlungerProgectile();
+                    proj.projPowerMult = 1;
+                }
+                plungerTimer = proj.projCooldown;
                 sfxController.PlayThrowSFX();
                 cmdItemThrowSpawn(gameObject, currPlunger);
                 animator.SetTrigger("Throw");

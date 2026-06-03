@@ -3718,7 +3718,7 @@ MonoBehaviour:
   offlineScene: Assets/Scenes/Main Menu.unity
   onlineScene: Assets/Scenes/rb_void_01.unity
   offlineSceneLoadDelay: 0
-  transport: {fileID: 1040802678}
+  transport: {fileID: 1040802680}
   networkAddress: localhost
   maxConnections: 100
   disconnectInactiveConnections: 0
@@ -3728,7 +3728,9 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs:
+  - {fileID: 6843632639094023129, guid: ef4beff11361f3f4f89b3a21c7d4ad61, type: 3}
   - {fileID: 6843632639094023129, guid: ea1191989dfabe64c88d1cf2ea4190eb, type: 3}
+  - {fileID: 496918326462007233, guid: c86d483195008644d83baa02ac4c97ab, type: 3}
   - {fileID: 6843632639094023129, guid: 06105480900a0db4cb0c35317115d12e, type: 3}
   exceptionsDisconnect: 1
   snapshotSettings:
@@ -3752,7 +3754,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040802673}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6e55fca1f4e4844593a3dd65a3ecb39, type: 3}
   m_Name: 
@@ -3789,7 +3791,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040802673}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
   m_Name: 

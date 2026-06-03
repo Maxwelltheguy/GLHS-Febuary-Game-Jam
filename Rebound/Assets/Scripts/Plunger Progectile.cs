@@ -8,6 +8,7 @@ public class PlungerProgectile : NetworkBehaviour
     public float projSpeed;
     public float projPowerMult;
     public int projCooldown;
+    public string damageType = "Basic";
     [SerializeField] bool plungerCodeOff = false;
     [SerializeField] NetworkManager networkManager;
 
@@ -43,5 +44,8 @@ public class PlungerProgectile : NetworkBehaviour
         }
     }
 
-    
+    public void DestroyObject()
+    {
+        NetworkServer.Destroy(gameObject);
+    }
 }

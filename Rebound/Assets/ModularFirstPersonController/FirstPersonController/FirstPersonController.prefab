@@ -317,6 +317,7 @@ MonoBehaviour:
   plungerObject:
   - {fileID: 6843632639094023129, guid: 06105480900a0db4cb0c35317115d12e, type: 3}
   - {fileID: 6843632639094023129, guid: ea1191989dfabe64c88d1cf2ea4190eb, type: 3}
+  - {fileID: 6843632639094023129, guid: ef4beff11361f3f4f89b3a21c7d4ad61, type: 3}
   networkManager: {fileID: 0}
   meleeObject: {fileID: 5737017658156146652}
   meleeTimer: 0
@@ -1153,6 +1154,7 @@ MonoBehaviour:
   projSpeed: 0
   projPowerMult: 1
   projCooldown: 0
+  damageType: Basic
   plungerCodeOff: 1
   networkManager: {fileID: 0}
 --- !u!1 &5951351067490501536

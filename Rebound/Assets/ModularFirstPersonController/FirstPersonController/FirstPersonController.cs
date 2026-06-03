@@ -532,7 +532,7 @@ public class FirstPersonController : NetworkBehaviour
                 proj = new PlungerProgectile();
                 proj.projPowerMult = 1;
             }
-            if (!isGrounded)
+            if (!isGrounded | proj.damageType == "Explosive")
             {
                 playerDamage = playerDamage + proj.projPowerMult;
                 rb.AddForce((other.transform.forward * 40) * (playerDamage * 0.07f) , ForceMode.Impulse);
