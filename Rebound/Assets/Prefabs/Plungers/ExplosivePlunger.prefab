@@ -127,6 +127,7 @@ MonoBehaviour:
   projCooldown: 12
   damageType: Explosive
   plungerCodeOff: 1
+  checkForOwnership: 0
   networkManager: {fileID: 0}
 --- !u!95 &2877310111676398774
 Animator:
@@ -180,8 +181,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843632639094023129}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.23481731, y: 0.7460612, z: -0.33240736, w: 0.5270283}
+  m_LocalPosition: {x: -10.074079, y: -2.4757957, z: 3.9702606}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -342,6 +343,7 @@ MonoBehaviour:
   projCooldown: 100
   damageType: Basic
   plungerCodeOff: 0
+  checkForOwnership: 1
   networkManager: {fileID: 0}
 --- !u!1001 &338652588084685234
 PrefabInstance:

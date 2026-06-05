@@ -10,6 +10,10 @@ public class Explosive : NetworkBehaviour
 
     void Start()
     {
+        if (isOwned)
+        {
+            gameObject.layer = 3;
+        }
         gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 23, ForceMode.Impulse);
     }
 
@@ -19,7 +23,11 @@ public class Explosive : NetworkBehaviour
         {
             NetworkServer.Destroy(gameObject);
             
-        } 
+        }
+        if (!isOwned)
+        {
+            gameObject.layer = 0;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

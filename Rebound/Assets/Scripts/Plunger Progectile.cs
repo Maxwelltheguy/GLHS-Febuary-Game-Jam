@@ -10,11 +10,12 @@ public class PlungerProgectile : NetworkBehaviour
     public int projCooldown;
     public string damageType = "Basic";
     [SerializeField] bool plungerCodeOff = false;
+    [SerializeField] bool checkForOwnership = true;
     [SerializeField] NetworkManager networkManager;
 
     private void Start()
     {
-        if (isOwned)
+        if (isOwned & checkForOwnership)
         {
             gameObject.tag = "MyAttack";
         }
@@ -36,7 +37,7 @@ public class PlungerProgectile : NetworkBehaviour
                 NetworkServer.Destroy(gameObject);
             }
         }
-        if (!isOwned)
+        if (!isOwned & checkForOwnership)
         {
             gameObject.tag = "Attack";
         }
