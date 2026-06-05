@@ -10,7 +10,7 @@ public class Explosive : NetworkBehaviour
 
     void Start()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.Impulse);
+        gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 23, ForceMode.Impulse);
     }
 
     private void Update()
@@ -18,6 +18,7 @@ public class Explosive : NetworkBehaviour
         if (explosionObject.transform.localScale.z > scaleLimit)
         {
             NetworkServer.Destroy(gameObject);
+            
         } 
     }
     private void OnCollisionEnter(Collision collision)

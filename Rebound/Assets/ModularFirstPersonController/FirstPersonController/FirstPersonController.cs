@@ -545,6 +545,31 @@ public class FirstPersonController : NetworkBehaviour
             }
             sfxController.PlayHitSFX();
         }
+        else if(other.gameObject.tag == "ChildAttack")
+        {
+            if (other.transform.parent.gameObject.tag == "Attack")
+            {
+                //Debug.LogError("Hi");
+                PlungerProgectileNetworkless proj = other.gameObject.GetComponent<PlungerProgectileNetworkless>();
+                if (proj == null)
+                {
+                    proj = new PlungerProgectileNetworkless();
+                    proj.projPowerMult = 1;
+                }
+                if (!isGrounded | proj.damageType == "Explosive")
+                {
+                    playerDamage = playerDamage + proj.projPowerMult;
+                    rb.AddForce((other.transform.forward * 40) * (playerDamage * 0.07f), ForceMode.Impulse);
+                    hitStun = true;
+                }
+                else
+                {
+                    playerDamage = playerDamage + proj.projPowerMult;
+                    rb.AddRelativeForce(new Vector3(0, 4 * proj.projPowerMult, 0), ForceMode.Impulse);
+                }
+                sfxController.PlayHitSFX();
+            }
+        }
     }
 
     private void Dash()

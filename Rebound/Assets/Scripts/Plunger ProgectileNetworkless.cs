@@ -1,26 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class PlungerProgectile : NetworkBehaviour
+public class PlungerProgectileNetworkless : MonoBehaviour
 {
     public float projSpeed;
     public float projPowerMult;
     public int projCooldown;
     public string damageType = "Basic";
     [SerializeField] bool plungerCodeOff = false;
-    [SerializeField] NetworkManager networkManager;
+    
 
-    private void Start()
-    {
-        if (isOwned)
-        {
-            gameObject.tag = "MyAttack";
-        }
-        networkManager = FindObjectOfType<NetworkManager>();
-        
-    }
+
     void Update()
     {
         if (plungerCodeOff == false)
@@ -33,17 +24,14 @@ public class PlungerProgectile : NetworkBehaviour
             else
             {
                 Destroy(gameObject);
-                NetworkServer.Destroy(gameObject);
+                
             }
-        }
-        if (!isOwned)
-        {
-            gameObject.tag = "Attack";
+            
         }
     }
 
     public void DestroyObject()
     {
-        NetworkServer.Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
