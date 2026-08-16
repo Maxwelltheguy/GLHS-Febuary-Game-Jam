@@ -11,9 +11,9 @@ public class SettingsController : MonoBehaviour
 {
     [SerializeField] Slider slider;
     [SerializeField] TMP_Dropdown colorDrop;
-    [SerializeField] TMP_Dropdown sceneDrop;
-    [SerializeField] string[] levelScenes;
-    [SerializeField] NetworkManager networkManager;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +33,7 @@ public class SettingsController : MonoBehaviour
         PlayerPrefs.SetInt("playerColor", colorDrop.value);
     }
     
-    public void ChangeMapToValue()
-    {
-        networkManager.onlineScene = levelScenes[sceneDrop.value];
-    }
+    
 
     public void ChangePrefToValue()
     {
