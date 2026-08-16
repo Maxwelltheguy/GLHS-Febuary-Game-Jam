@@ -778,8 +778,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843632639094023129}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14904404, y: 0.33163616, z: -0.053146385, w: 0.9300424}
-  m_LocalPosition: {x: -5.087947, y: 8.412581, z: 11.650955}
+  m_LocalRotation: {x: -0.31633508, y: 0.66216177, z: -0.36601812, w: -0.57228035}
+  m_LocalPosition: {x: -30.567324, y: 10.3498745, z: -17.907314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -902,6 +902,7 @@ MonoBehaviour:
   projCooldown: 25
   damageType: Basic
   plungerCodeOff: 1
+  checkForOwnership: 1
   networkManager: {fileID: 0}
 --- !u!1 &8055752709500030132
 GameObject:
