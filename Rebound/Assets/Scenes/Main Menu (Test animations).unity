@@ -8243,6 +8243,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7009797857457697962, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Left_Arm
+      objectReference: {fileID: 0}
     - target: {fileID: -6969020297903903404, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000037930648
@@ -8283,6 +8287,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -62.579
       objectReference: {fileID: 0}
+    - target: {fileID: -6321379762768419156, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Right_Waist
+      objectReference: {fileID: 0}
     - target: {fileID: -5757010472119200768, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000026263297
@@ -8315,17 +8323,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.245
       objectReference: {fileID: 0}
+    - target: {fileID: -5341366431364255792, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Left_Elbow
+      objectReference: {fileID: 0}
     - target: {fileID: -5234448375175369897, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00000039301813
+      value: 0.0000016093254
       objectReference: {fileID: 0}
     - target: {fileID: -5234448375175369897, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.42679867
+      value: 0.42672625
       objectReference: {fileID: 0}
     - target: {fileID: -5234448375175369897, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0000009536743
+      value: -0.0000064373016
       objectReference: {fileID: 0}
     - target: {fileID: -5234448375175369897, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8354,6 +8366,22 @@ PrefabInstance:
     - target: {fileID: -5234448375175369897, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.101
+      objectReference: {fileID: 0}
+    - target: {fileID: -4878807112873575649, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Right_Ankle
+      objectReference: {fileID: 0}
+    - target: {fileID: -4299077365104867289, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Left_Shoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: -3171430531078271698, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Left_Knee
+      objectReference: {fileID: 0}
+    - target: {fileID: -2675560840559964356, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Right_Arm
       objectReference: {fileID: 0}
     - target: {fileID: -2639638324218457063, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8431,6 +8459,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -11.277
       objectReference: {fileID: 0}
+    - target: {fileID: -2092839563252741769, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Right_Knee
+      objectReference: {fileID: 0}
+    - target: {fileID: -1719866666920192412, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Right_Thigh
+      objectReference: {fileID: 0}
     - target: {fileID: -1252090209154404817, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000000026145635
@@ -8462,6 +8498,10 @@ PrefabInstance:
     - target: {fileID: -1252090209154404817, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 83.372
+      objectReference: {fileID: 0}
+    - target: {fileID: -1018002156248307718, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Left_Thigh
       objectReference: {fileID: 0}
     - target: {fileID: 276081610717148219, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8547,6 +8587,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1790183945725220954, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Belly
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795207614103177937, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Left_Ankle
+      objectReference: {fileID: 0}
     - target: {fileID: 2046591875330674307, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000045597553
@@ -8579,6 +8627,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -35.398
       objectReference: {fileID: 0}
+    - target: {fileID: 3063961621572950640, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Left_Waist
+      objectReference: {fileID: 0}
     - target: {fileID: 4167280743394806330, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0
@@ -8586,6 +8638,18 @@ PrefabInstance:
     - target: {fileID: 4167280743394806330, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.549
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819001077394492298, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Neck
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941818000966381144, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Right_Elbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946073534690782466, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Left_Wrist
       objectReference: {fileID: 0}
     - target: {fileID: 6235462586754342484, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8627,11 +8691,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -162.501
       objectReference: {fileID: 0}
+    - target: {fileID: 6905609870639353253, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Waist
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774103532966699153, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Right_Shoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020273298907766521, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      propertyPath: m_Name
+      value: Bone_Right)Wrist
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1061588880}
   m_SourcePrefab: {fileID: 100100000, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+--- !u!1 &1061588879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b08885d75f96fe4284b545906e5a21b, type: 3}
+  m_PrefabInstance: {fileID: 1061588878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1061588880
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061588879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5fa5dc08bb07cf47b22d8afdf9647a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1074097514
 GameObject:
   m_ObjectHideFlags: 0
