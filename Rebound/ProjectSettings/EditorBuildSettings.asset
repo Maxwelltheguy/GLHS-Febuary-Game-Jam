@@ -18,6 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/rb_void_02.unity
     guid: 2f48f175315f0f64da228d8f1868fca1
   - enabled: 0
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/Main Menu (OLD).unity
     guid: e8eb2b8f3e267c44695b59b595069377
   m_configObjects: {}
