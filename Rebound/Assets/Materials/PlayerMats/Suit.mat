@@ -75,7 +75,7 @@ Material:
     - _DstBlend: 0
     - _FresnelBrightness: 0.28
     - _FresnelPower: 0.25
-    - _FresnelShadowDropoff: 0.94
+    - _FresnelShadowDropoff: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
