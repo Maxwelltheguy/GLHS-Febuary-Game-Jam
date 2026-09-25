@@ -20,12 +20,13 @@ public class EscMenu : MonoBehaviour
     private void Start()
     {
         networkManager = FindAnyObjectByType<NetworkManager>();
+        
     }
 
     void Update()
     {
         EscMenuEnable(); // calls for esc menu enabling/disabling
-        ipText.text = GetLocalIPAddress();
+        
     }
 
 
@@ -40,6 +41,7 @@ public class EscMenu : MonoBehaviour
             }
             else
             {
+                ipText.text = GetUserSteamID();
                 canvas.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
             }
@@ -57,6 +59,11 @@ public class EscMenu : MonoBehaviour
         networkManager.StopClient();
         networkManager.StopServer();
 
+    }
+
+    public string GetUserSteamID()
+    {
+        return Steamworks.SteamUser.GetSteamID().ToString();
     }
 
     public string GetLocalIPAddress()

@@ -13,16 +13,22 @@ public class NetPlayerManager : NetworkBehaviour
     [SerializeField] GameObject[] plungerObject;
     [SerializeField] NetworkManager networkManager;
     [SerializeField] GameObject meleeObject;
+    [SerializeField] GameManager gameManager;
     [SerializeField] int meleeTimer;
     public float plungerTimer; //public for debuging
     [SerializeField] Animator animator;
     [SerializeField] PlayerSFXController sfxController;
     [SerializeField] TMP_Text damageText;
+    [SerializeField] TMP_Text nameTag;
     [SerializeField] bool showDamage = true;
+    [SerializeField] string currentGamemode;
     [SyncVar] bool meleeActive = false;
     [SyncVar] bool plungerActive = false;
     [SyncVar] public bool isPlayerWalking = false;
     [SyncVar] int currPlunger = 0;
+    [SyncVar] public int score = 0;
+    [SyncVar] public string playerName;
+    [SyncVar] public int myPlayerNumber;
 
     void Start()
     {
@@ -31,15 +37,36 @@ public class NetPlayerManager : NetworkBehaviour
         {
             myController.enabled = true;
             myCamera.enabled = true;
+
         }
+
         networkManager = FindObjectOfType<NetworkManager>();
         sfxController = GetComponent<PlayerSFXController>();
-        Respawn();
+        currentGamemode = FindObjectOfType<ServerSettings>().gamemode;
+        gameManager = FindObjectOfType<GameManager>();
+        if (currentGamemode == "classic" & isLocalPlayer)
+        {
+            score = 1;
+        }
+        if (isLocalPlayer)
+        {
+            playerName = HeathenEngineering.SteamworksIntegration.UserData.Get().Name.ToString();
+
+            nameTag.enabled = false;
+            //Debug.LogError("");
+            nameTag.text = playerName;
+        }
+        
+
+
+            Respawn();
+
+        
     }
 
     private void Update()
     {
-        
+        nameTag.text = playerName;
         if (meleeTimer > 0 &isLocalPlayer)
         {
             meleeActive = true;
@@ -129,6 +156,8 @@ public class NetPlayerManager : NetworkBehaviour
             }
         }
 
+        
+
     }
 
     private void FixedUpdate()
@@ -165,8 +194,21 @@ public class NetPlayerManager : NetworkBehaviour
 
     public void Respawn()
     {
+        if (isLocalPlayer)
+        {
+            if (currentGamemode == "classic")
+            {
+                score--;
+                //gameManager.CheckPlayerScore(score, playerName);
+
+                //Debug.LogError("HI :), Score is " + score);
+            }
+        }
         transform.position = networkManager.GetStartPosition().position;
         myController.playerDamage = 0f;
         sfxController.PlayRespawnSFX();
+        
     }
+
+
 }
